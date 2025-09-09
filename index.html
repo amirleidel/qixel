@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qixel Halftone-QR</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Halftone QR Maker</h1>
+  <h2>Embed your image directly into a QR code! </h2>
+    
+  <div style="overflow: hidden;"> 
+  <button id="btn" style="float: left;">Upload Image</button>
+  <input type="file" id="fileInput" style="display:none" accept="image/*">
+  <div id="fileNameDisplay" >No file chosen</div>
+  </div>
+  
+  <div>
+  Padding
+  <input type="radio" id="blk" name="pad" value="black">
+  <label for="black">Black</label>
+  <input type="radio" id="wht" name="pad" value="white">
+  <label for="white">White</label>
+  <input type="radio" id="ext" name="pad" value="extend" checked="checked">
+  <label for="extend">Extend</label>
+  <br>
+  </div>
+  
+  <div>
+  QR-Dithering
+  <input type="radio" id="blk" name="dit" value="atkinson">
+  <label for="atkinson">Atkinson</label>
+  <input type="radio" id="wht" name="dit" value="floydSteinberg" checked="checked">
+  <label for="floydSteinberg">Floyd-Steinberg</label>
+  <input type="radio" id="ext" name="dit" value="sierra" >
+  <label for="sierra">Sierra</label>
+  <!-- <input type="radio" id="ext" name="dit" value="leidel" >
+  <label for="leidel">Leidel</label> -->
+  <br>
+  </div>
+  
+  <div>
+  <label for="temp">Contrast Value γ</label>
+    <span id="gammaValue">1.0</span>
+    <input type="range" id="gamma" name="slid" list="markers" min="0.4" max="3.4" step="0.1" value="1.6"/>
+    <datalist id="markers">
+      <option value="0.4"></option>
+      <option value="1.0"></option>
+      <option value="1.6"></option>
+      <option value="2.2"></option>
+      <option value="2.8"></option>
+      <option value="3.4"></option>
+    </datalist>
+  </div>
+  
+  <div>
+  Your QR Text
+  <input type="text" id="textInput" name="fname" value="https://ajgl.blog/">
+  </div>
+  
+  <div class="wrapper" style="
+    position: relative;
+    width: 369px;
+    height: 369px;"> 
+    
+        <canvas id="canvas" style="
+        width:369px; 
+        height:369px; 
+        image-rendering: pixelated;
+        position: absolute;
+        top: 0;
+        left: 0;"></canvas>
+        
+        <canvas id="mask_canvas" style="
+        width:369px; 
+        height:369px; 
+        image-rendering: pixelated;
+        position: absolute;
+        top: 0;
+        left: 0;"></canvas>
+        
+      <canvas id="draw_canvas" style="
+        width:369px; 
+        height:369px; 
+        image-rendering: pixelated;
+        position: absolute;
+        top: 0;
+        left: 0;
+        "></canvas>
+
+  </div>
+  
+  <div>
+  
+        <div><button id="del_button" style="
+        color: #eee;
+        background-color: #f30;
+        padding: 3px 10px;
+        "> Redraw </button></div>
+  
+  </div>
+  
+  <div> 
+  <canvas id="canvas2" style="width:369px; height:369px; image-rendering: pixelated;"></canvas>
+  </div>
+  
+  <button id="downloadBtn">Download</button>
+  
+  
+  <script src="qr.js"></script>
+  <script src="https://docs.opencv.org/4.x/opencv.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
