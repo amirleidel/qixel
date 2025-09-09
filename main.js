@@ -49,7 +49,7 @@ delButton.addEventListener("click", () => {
 /********** handle touch too *******/
 
 // Set up touch events for mobile, etc
-drawCanvas.addEventListener("touchstart", function (e) {
+drawCanvas.addEventListener("ontouchstart", function (e) {
         mousePos = getTouchPos(drawCanvas, e);
   var touch = e.touches[0];
   var mouseEvent = new MouseEvent("mousedown", {
@@ -58,11 +58,11 @@ drawCanvas.addEventListener("touchstart", function (e) {
   });
   drawCanvas.dispatchEvent(mouseEvent);
 }, false);
-drawCanvas.addEventListener("touchend", function (e) {
+drawCanvas.addEventListener("ontouchend", function (e) {
   var mouseEvent = new MouseEvent("mouseup", {});
   drawCanvas.dispatchEvent(mouseEvent);
 }, false);
-drawCanvas.addEventListener("touchmove", function (e) {
+drawCanvas.addEventListener("ontouchmove", function (e) {
   var touch = e.touches[0];
   var mouseEvent = new MouseEvent("mousemove", {
     clientX: touch.clientX,
