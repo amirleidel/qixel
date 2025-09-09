@@ -46,6 +46,57 @@ delButton.addEventListener("click", () => {
        
 });
 
+/********** handle touch too *******/
+
+// Set up touch events for mobile, etc
+drawCanvas.addEventListener("touchstart", function (e) {
+        mousePos = getTouchPos(drawCanvas, e);
+  var touch = e.touches[0];
+  var mouseEvent = new MouseEvent("mousedown", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  drawCanvas.dispatchEvent(mouseEvent);
+}, false);
+drawCanvas.addEventListener("touchend", function (e) {
+  var mouseEvent = new MouseEvent("mouseup", {});
+  drawCanvas.dispatchEvent(mouseEvent);
+}, false);
+drawCanvas.addEventListener("touchmove", function (e) {
+  var touch = e.touches[0];
+  var mouseEvent = new MouseEvent("mousemove", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  drawCanvas.dispatchEvent(mouseEvent);
+}, false);
+
+// Get the position of a touch relative to the canvas
+function getTouchPos(canvasDom, touchEvent) {
+  var rect = canvasDom.getBoundingClientRect();
+  return {
+    x: touchEvent.touches[0].clientX - rect.left,
+    y: touchEvent.touches[0].clientY - rect.top
+  };
+}
+
+document.body.addEventListener("touchstart", function (e) {
+  if (e.target == drawCanvas) {
+    e.preventDefault();
+  }
+}, false);
+document.body.addEventListener("touchend", function (e) {
+  if (e.target == drawCanvas) {
+    e.preventDefault();
+  }
+}, false);
+document.body.addEventListener("touchmove", function (e) {
+  if (e.target == drawCanvas) {
+    e.preventDefault();
+  }
+}, false);
+
+
 /********** utils ******************/
 // Thanks to https://stackoverflow.com/a/18053642
 function fixPosition(e, gCanvasElement) {
