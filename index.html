@@ -5,17 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>qixel Halftone-QR</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
+
+<div class="content">
+
+<div class="head-wrapper">
+  <!--<img class="banner-item" src="david-qrcode.png" alt="" /> -->
   <h1>Halftone QR Maker</h1>
   <h2>Embed your image directly into a QR code! </h2>
-    
-  <div style="overflow: hidden;"> 
+</div>
+
+<div class="input" style="overflow: hidden;"> 
   <button id="btn" style="float: left;">Upload Image</button>
   <input type="file" id="fileInput" style="display:none" accept="image/*">
   <div id="fileNameDisplay" >No file chosen</div>
-  </div>
+</div>
   
+<div class="settings" style="overflow: hidden;"> 
   <div>
   Padding
   <input type="radio" id="blk" name="pad" value="black">
@@ -56,60 +65,41 @@
   
   <div>
   Your QR Text
-  <input type="text" id="textInput" name="fname" value="https://ajgl.blog/">
+  <input type="text" id="textInput" name="fname" value="https://qixel.eu/">
   </div>
   
-  <div class="wrapper" style="
-    position: relative;
-    width: 369px;
-    height: 369px;"> 
-    
-        <canvas id="canvas" style="
-        width:369px; 
-        height:369px; 
-        image-rendering: pixelated;
-        position: absolute;
-        top: 0;
-        left: 0;"></canvas>
-        
-        <canvas id="mask_canvas" style="
-        width:369px; 
-        height:369px; 
-        image-rendering: pixelated;
-        position: absolute;
-        top: 0;
-        left: 0;"></canvas>
-        
-      <canvas id="draw_canvas" style="
-        width:369px; 
-        height:369px; 
-        image-rendering: pixelated;
-        position: absolute;
-        top: 0;
-        left: 0;
-        "></canvas>
+</div>
 
-  </div>
-  
-  <div>
-  
-        <div><button id="del_button" style="
+<div class="container">
+<div class="box left">
+    <div class="canvas-wrapper"> 
+        <canvas id="canvas"></canvas>
+        <canvas id="mask_canvas"></canvas>
+        <canvas id="draw_canvas"></canvas>
+    </div>
+    <button id="del_button" style="
         color: #eee;
         background-color: #f30;
         padding: 3px 10px;
-        "> Redraw </button></div>
-  
-  </div>
-  
-  <div> 
-  <canvas id="canvas2" style="width:369px; height:369px; image-rendering: pixelated;"></canvas>
-  </div>
-  
-  <button id="downloadBtn">Download</button>
-  
+        "> Redraw </button>
+</div>
+<div class="box right">
+    <div class="output-wrapper"> 
+    <canvas id="canvas2"></canvas>
+    </div>
+    <button id="downloadBtn">Download</button>
+</div>
+</div>
+
+
+
+
+
+</div>
   
   <script src="qr.js"></script>
   <script src="https://docs.opencv.org/4.x/opencv.js"></script>
   <script type="module" src="/main.js"></script>
 </body>
+
 </html>

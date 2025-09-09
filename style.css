@@ -1,0 +1,98 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1, .highlight {
+  font-family: 'Nunito', sans-serif;
+  font-size: 30pt;
+  font-weight: 700; /* 700 = bold */
+}
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12pt;
+  font-weight: 400;
+}
+
+.content {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-item {
+    float: left;
+    margin: 0 1rem 0 0; /* space to the right and bottom */
+    height: auto;
+    width: auto;  
+}
+
+.head-wrapper {
+    align-items: center;
+    background-image: linear-gradient(to right top, #9292bb, #9e88b4, #aa7ea8, #b47498, #bb6b83, #c26e76, #c57369, #c47a5d, #c58c5c, #c29e60, #bcb06b, #b3c27c);
+    /* or try radial-gradient() for a circular effect */
+    color: white;        /* adjust text color for contrast */
+    padding: 0.5rem;
+    margin: 0rem 0.5rem;
+}
+
+.input {
+    padding: 0.5rem;
+    border-style: dashed;
+    border-color: #ccc;
+    margin: 0.5rem;
+}
+
+.settings {
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+#textInput {
+    width: min(40rem,100%);
+    height: 1.2rem;
+    
+}
+.canvas-wrapper{
+    position: relative;
+    width: 369px;
+    height: 369px;
+}
+#canvas, #mask_canvas, #draw_canvas {
+    width:369px; 
+    height:369px; 
+    image-rendering: pixelated;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.output-wrapper{
+    position: relative;
+    width: 369px;
+    height: 369px;
+}
+
+#canvas2 {
+    width:369px; 
+    height:369px; 
+    image-rendering: pixelated;
+}
+
+.container {
+    display: flex;        /* puts children side by side */
+    gap: 0.5rem;            /* space between them */
+    margin: 0.5rem;
+    justify-content: center; 
+}
+
+.box {
+  flex: 1;              /* each takes equal width */
+  padding: 0.5rem;
+}
+
+/* ON MOBILE:  When screen is smaller than limit px, stack vertically */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}
