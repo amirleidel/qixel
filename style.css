@@ -29,7 +29,7 @@ h2 {
 }
 
 .head-wrapper {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 14px;
     align-items: center;
     background-image: linear-gradient(to right top, #9292bb, #9e88b4, #aa7ea8, #b47498, #bb6b83, #c26e76, #c57369, #c47a5d, #c58c5c, #c29e60, #bcb06b, #b3c27c);
