@@ -605,9 +605,7 @@ function listenChanges(e) {
             makeImage();
         });
         
-        console.log(gamma_slider);
-        console.log(gamma_slider.addEventListener);
-        gamma_slider.addEventListener("mouseup", () => { 
+        gamma_slider.addEventListener("input", () => { 
         
             makeImage();
             
