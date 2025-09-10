@@ -47,10 +47,11 @@ h2 {
     /*border-style: dashed;*/
     border-color: #ccc;
     margin: 0.5rem;
+    align-content: center;
 }
 
-.input-elems {
-    vertical-align: middle;
+#btn {
+    margin-right: 0.5rem;
 }
 
 .settings {
