@@ -17,6 +17,7 @@ h2 {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    min-width: 400px;
 }
 
 .banner-item {
@@ -88,6 +89,12 @@ h2 {
 .box {
   flex: 1;              /* each takes equal width */
   padding: 0.5rem;
+}
+
+#del_button {
+    color: #eee;
+    background-color: #f30;
+    padding: 3px 10px;
 }
 
 /* ON MOBILE:  When screen is smaller than limit px, stack vertically */
