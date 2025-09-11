@@ -1,6 +1,7 @@
 body {
   font-family: 'Nunito', sans-serif;
   min-width: 400px;
+  min-height: 95vh;
 }
 
 h1, .highlight {
@@ -14,18 +15,11 @@ h2 {
   font-weight: 400;
 }
 
-.content {
+.content{
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
     min-width: 400px;
-}
-
-.banner-item {
-    float: left;
-    margin: 0 1rem 0 0; /* space to the right and bottom */
-    height: auto;
-    width: auto;  
 }
 
 .head-wrapper {
@@ -37,6 +31,29 @@ h2 {
     color: white;        /* adjust text color for contrast */
     padding: 0.5rem;
     margin: 0rem 0.5rem;
+    
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+.banner-images {
+    margin-left: auto; 
+    display: flex;
+    flex-direction: row;
+}
+.banner-item {
+    height: 123px;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: white;
+}
+
+
+.banner-item img {
+    margin: 0;
+    image-rendering: pixelated;
 }
 
 .input {
@@ -112,6 +129,61 @@ h2 {
     color: #eee;
     background-color: #f30;
     padding: 3px 10px;
+}
+
+
+#footer-container {
+    background-image: linear-gradient(to right top, #9292bb, #9e88b4, #aa7ea8, #b47498, #bb6b83, #c26e76, #c57369, #c47a5d, #c58c5c, #c29e60, #bcb06b, #b3c27c);
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px 30px 20px 30px;
+    
+    border-radius: 14px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#footer-container a {
+  text-decoration: none;
+}
+
+#footer-container ul {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+
+.footer__nav {
+    color: #ddd;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 16px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.footer__nav > * {
+  margin-right: 1.25em;
+}
+
+.footer__nav a {
+    color: #ddd;
+}
+
+.legal {
+  margin-top: 16px;
+  margin-left: auto; 
+  margin-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.legal__links {
+  display: flex;
+  align-items: center;
 }
 
 /* ON MOBILE:  When screen is smaller than limit px, stack vertically */
