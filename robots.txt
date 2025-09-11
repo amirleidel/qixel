@@ -1,4 +1,8 @@
 User-agent: *
+Disallow: /privacy-policy.html
+Disallow: /terms-of-use.html
+Disallow: /impressum.html
+
 Allow: /
 
 Sitemap: https://qixel.eu/sitemap.xml
